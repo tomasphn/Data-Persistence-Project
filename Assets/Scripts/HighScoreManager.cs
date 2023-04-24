@@ -26,4 +26,14 @@ public class HighScoreManager : MonoBehaviour
       HighScore = newScore;
       HighScoreName = CurrentPlayerName;
     }
+
+    public void LoadHighScore()
+    {
+        // load high score
+    }
+
+    public void SaveHighScore()
+    {
+        // save high score
+    }
 }
