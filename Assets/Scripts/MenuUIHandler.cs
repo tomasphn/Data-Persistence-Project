@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using UnityEngine.UI;
+using TMPro;
 
 public class MenuUIHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TMP_InputField inputField;
+  
+    private void Start() 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        inputField = GameObject.Find("Name Input").GetComponent<TMP_InputField>();
     }
 
     public void StartGame()
     {
+        HighScoreManager.Instance.CurrentPlayerName = inputField.text;
+        Debug.Log(HighScoreManager.Instance.CurrentPlayerName);
         SceneManager.LoadScene(1);
     }
 
