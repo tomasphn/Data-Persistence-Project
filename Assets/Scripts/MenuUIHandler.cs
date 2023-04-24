@@ -13,6 +13,11 @@ public class MenuUIHandler : MonoBehaviour
     private void Start() 
     {
         inputField = GameObject.Find("Name Input").GetComponent<TMP_InputField>();
+        string currentPlayer = HighScoreManager.Instance.CurrentPlayerName;
+        if (currentPlayer != null)
+        {
+            inputField.text = currentPlayer;
+        }
     }
 
     public void StartGame()
